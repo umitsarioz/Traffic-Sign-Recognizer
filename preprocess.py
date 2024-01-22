@@ -101,7 +101,10 @@ class Preprocessor:
                 self.write_pkl(data=content, filename=filepath)
 
     def read_feature_and_labels_from_files(self) -> dict:
-        filenames = ["train_features", "train_labels", "test_features", "test_labels"]
-        filepaths = [os.path.join(self.root_fp, filename) for filename in filenames]
-        dct = {filename: self.read_pkl(filename=filepath) for filename, filepath in zip(filenames, filepaths)}
-        return dct
+        try:
+            filenames = ["train_features", "train_labels", "test_features", "test_labels"]
+            filepaths = [os.path.join(self.root_fp, filename) for filename in filenames]
+            dct = {filename: self.read_pkl(filename=filepath) for filename, filepath in zip(filenames, filepaths)}
+            return dct
+        except:
+            raise Exception("Features.pkl is not found. Run preprocessor using main.py with skip_preprocess=False parameter.")

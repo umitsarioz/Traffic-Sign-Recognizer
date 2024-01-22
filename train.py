@@ -57,8 +57,11 @@ class Trainer:
             self.model.save(self.model_name)
 
     def load_model(self):
-        print(f"Loading prediction model as name {self.model_name}")
-        return tf.keras.models.load_model(self.model_name)
+        try:
+            print(f"Loading prediction model as name {self.model_name}")
+            return tf.keras.models.load_model(self.model_name)
+        except:
+            raise Exception("Model file is not found. Train model using main.py with skip_train=False.")
 
     def plot_acc_loss(self, save=False):
         if self.history:
