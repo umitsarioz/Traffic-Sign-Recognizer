@@ -32,3 +32,13 @@ The German Traffic Sign Recognition Benchmark (GTSRB) was used as the data set i
 <a href= "https://benchmark.ini.rub.de/">INI Benchmark Website</a><br>
 <a href="https://www.kaggle.com/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign" target='blank_' alt='Dataset link' > Dataset Link on Kaggle </a> 
 
+# Install & run
+
+Apply the steps are below: 
+1. pip3 install -r requirements.txt
+2. python3 runner.py
+3. python3 main.py
+
+
+<br>
+Note: docker version & web ui version will be added in time 
