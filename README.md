@@ -2,8 +2,9 @@
 <hr>
 
 ## Main Purpose:
-
 Train a model to recognize traffic signs using with Convolutional Neural Network. 
+
+<img src="images/img.png"/> 
 
 ### Problem and Motivation : 
 <hr>
