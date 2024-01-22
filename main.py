@@ -1,16 +1,7 @@
-import numpy as np
-from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
 from preprocess import Preprocessor
 from train import Trainer
-
-
-def calculate_accuracy_score(model, x, y) -> float:
-    y_pred = np.argmax(model.predict(x), axis=1)
-    y_true = np.argmax(y, axis=1)
-    acc = accuracy_score(y_true=y_true, y_pred=y_pred)
-    return acc * 100
 
 
 def main(skip_preprocess=False, skip_train=False):
@@ -34,9 +25,9 @@ def main(skip_preprocess=False, skip_train=False):
 
     # Calculate Accuracy Scores & plot Them.
     test_features, test_labels = data.get('test_features'), data.get('test_labels')
-    acc_test = calculate_accuracy_score(model, x=test_features, y=test_labels)
-    acc_train = calculate_accuracy_score(model, x=train_features, y=train_labels)
-    acc_val = calculate_accuracy_score(model, x=val_features, y=val_labels)
+    acc_test = train_obj.calculate_accuracy_score(model, x=test_features, y=test_labels)
+    acc_train = train_obj.calculate_accuracy_score(model, x=train_features, y=train_labels)
+    acc_val = train_obj.calculate_accuracy_score(model, x=val_features, y=val_labels)
     print(f"train-acc: %{acc_train:.3f} | val-acc: %{acc_val:.3f} | test-acc: %{acc_test:.3f}")
 
 

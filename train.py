@@ -4,6 +4,7 @@ import numpy as np
 import tensorflow as tf
 import tensorflow.keras as K
 from matplotlib import pyplot as plt
+from sklearn.metrics import accuracy_score
 
 
 class Trainer:
@@ -18,6 +19,7 @@ class Trainer:
         self.history = None
         print("Trainer class is initialized...")
         self.__check_or_create_models_folder()
+
     def __check_or_create_models_folder(self):
         if not os.path.exists('models'):
             os.mkdir('models')
@@ -70,3 +72,9 @@ class Trainer:
                 plt.savefig('model_scores.png', bbox_inches='tight')
         else:
             raise Exception("No history object is exist. First you need to train a model to plot.")
+
+    def calculate_accuracy_score(self, model, x, y) -> float:
+        y_pred = np.argmax(model.predict(x), axis=1)
+        y_true = np.argmax(y, axis=1)
+        acc = accuracy_score(y_true=y_true, y_pred=y_pred)
+        return acc * 100
