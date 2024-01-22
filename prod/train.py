@@ -1,7 +1,6 @@
 import os.path
 
 import numpy as np
-import tensorflow as tf
 import tensorflow.keras as K
 from matplotlib import pyplot as plt
 from sklearn.metrics import accuracy_score
@@ -21,8 +20,9 @@ class Trainer:
         self.__check_or_create_models_folder()
 
     def __check_or_create_models_folder(self):
-        if not os.path.exists('models'):
-            os.mkdir('models')
+        model_path = os.path.join('models')
+        if not os.path.exists(model_path):
+            os.mkdir(model_path)
 
     def __create_model(self):
         print("Creating model...")
@@ -59,9 +59,9 @@ class Trainer:
     def load_model(self):
         try:
             print(f"Loading prediction model as name {self.model_name}")
-            return tf.keras.models.load_model(self.model_name)
+            return K.models.load_model(self.model_name)
         except:
-            raise Exception("Model file is not found. Train model using main.py with skip_train=False.")
+            raise Exception("Model file is not found. Train model using runner.py with skip_train=False.")
 
     def plot_acc_loss(self, save=False):
         if self.history:
@@ -72,7 +72,8 @@ class Trainer:
             plt.legend(loc='best')
             plt.show()
             if save:
-                plt.savefig('model_scores.png', bbox_inches='tight')
+                filepath = os.path.join('images', 'model_scores.png')
+                plt.savefig(filepath, bbox_inches='tight')
         else:
             raise Exception("No history object is exist. First you need to train a model to plot.")
 

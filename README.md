@@ -1,6 +1,10 @@
 # Traffic Sign Recognition
 <hr>
 
+## Main Purpose:
+
+Train a model to recognize traffic signs using with Convolutional Neural Network. 
+
 ### Problem and Motivation : 
 <hr>
 Indicating traffic signs is important for the safety of people.
@@ -15,7 +19,7 @@ attention and fatigue are prevented.
 
 # Dataset
 <hr>
-<img src="signs.png"/>
+<img src="images/signs.png"/>
 
 The German Traffic Sign Recognition Benchmark (GTSRB) was used as the data set in the project. The data set we use in the project can be accessed via Kaggle. GTSRB consists of more than 50,000 images. Each image has 3 channels in RGB and the width and height values are different. There are 39209 images in the exercise data set and 12630 images in the test data set. There are 43 different classes in the data set. Each image is mapped to a class. Info:
 

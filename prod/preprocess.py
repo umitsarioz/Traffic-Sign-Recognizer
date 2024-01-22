@@ -107,4 +107,4 @@ class Preprocessor:
             dct = {filename: self.read_pkl(filename=filepath) for filename, filepath in zip(filenames, filepaths)}
             return dct
         except:
-            raise Exception("Features.pkl is not found. Run preprocessor using main.py with skip_preprocess=False parameter.")
+            raise Exception("Features.pkl is not found. Run preprocessor using runner.py with skip_preprocess=False parameter.")
