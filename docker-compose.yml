@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  frontend:
+    build: ui
+    ports:
+      - 8039:8039
+    volumes:
+      - ./ui:/app
+    restart: always
+    depends_on:
+      - backend
+
+  backend:
+    build: service
+    ports:
+      - 8040:8040
+    restart: always
+    volumes:
+      - ./service:/app

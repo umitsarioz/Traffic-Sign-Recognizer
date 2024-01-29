@@ -4,7 +4,7 @@
 ## Main Purpose:
 Train a model to recognize traffic signs using with Convolutional Neural Network. 
 
-<img src="images/img.png"/> 
+![demo.gif](images%2Fdemo.gif)
 
 ### Problem and Motivation : 
 <hr>
@@ -32,13 +32,12 @@ The German Traffic Sign Recognition Benchmark (GTSRB) was used as the data set i
 <a href= "https://benchmark.ini.rub.de/">INI Benchmark Website</a><br>
 <a href="https://www.kaggle.com/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign" target='blank_' alt='Dataset link' > Dataset Link on Kaggle </a> 
 
-# Install & run
+# Setup & Deployment
 
-Apply the steps are below: 
-1. pip3 install -r requirements.txt
-2. python3 runner.py
-3. python3 main.py
+> Basically, you can setup project on Docker.
+## Deployment
+- First usage: ` docker-compose up -d --build`  
+- Already build: ` docker-compose up -d `
+- For shutdown: ` docker-compose down`
+- Voila! Now you can use your product in <a href="http://localhost:8039">your localhost http://localhost:8039 .</a>
 
-
-<br>
-Note: docker version & web ui version will be added in time 

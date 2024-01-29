@@ -7,8 +7,8 @@ dataset
 .idea
 dataset/
 .idea/
-models
-models/
+#service/models
+#service/models/
 # C extensions
 *.so
 
