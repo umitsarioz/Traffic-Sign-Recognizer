@@ -2,7 +2,7 @@
 <hr>
 
 ## Main Purpose:
-Train a model to recognize traffic signs using with Convolutional Neural Network. 
+Train a model to recognize traffic signs using with Convolutional Neural Network. It's a multilabel classification problem.
 
 ![demo.gif](images%2Fdemo.gif)
 
